@@ -1,0 +1,27 @@
+<template>
+    <form>
+        <div
+            class="slds-p-top_small slds-p-bottom_medium slds-align_absolute-center slds-theme_default slds-text-heading_medium">
+            <b>South Africa ID Number Validation</b></div>
+        <div class="slds-box slds-theme_default">
+            <lightning-input 
+                placeholder="Enter ID Number"
+                data-name="IDNumber"
+                type="text"
+                value={value}
+                label="Enter ID Number"
+                class="validate" 
+                pattern="/(([0-9]{2})(0|1)([0-9])([0-3])([0-9]))([ ]?)(([0-9]{4})([ ]?)([0-1][8]([ ]?)[0-9]))/gm" message-when-pattern-mismatch="Please enter Valid ID Number" required>
+        </lightning-input>
+            <div class="slds-m-top_small slds-align_absolute-center">
+                <lightning-button 
+                    variant="brand" 
+                    name="validateIDNumber"
+                    class="slds-m-left_x-small" 
+                    label="Search" 
+                    onclick={validateID}>
+                </lightning-button>
+            </div>
+        </div>
+    </form>
+</template>

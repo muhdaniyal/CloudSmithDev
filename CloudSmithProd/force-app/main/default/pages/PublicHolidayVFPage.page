@@ -1,0 +1,20 @@
+<apex:page controller="HolidayCheckController">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:inputText value="{!idNumber}" label="South Africa ID Number"/>
+                <apex:commandButton value="Check Holidays" action="{!checkHolidays}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Holidays on Your Date of Birth">
+                <apex:outputPanel rendered="{!NOT(ISBLANK(holidays))}">
+                    <apex:pageBlockTable value="{!holidays}" var="holiday">
+                        <apex:column value="{!holiday}"/>
+                    </apex:pageBlockTable>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!ISBLANK(holidays)}">
+                    No holidays found on your date of birth.
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

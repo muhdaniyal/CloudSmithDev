@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Simple Input Form">
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" label="Enter a value" value={value} onchange={handleChange}></lightning-input>
+        </div>
+        <div class="slds-m-around_medium">
+            <lightning-button variant="brand" label="Save"  disabled={isButtonDisabled} onclick={handleSave}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

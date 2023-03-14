@@ -1,0 +1,20 @@
+<template>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={holidays} for:item="holiday">
+                <tr key={holiday.name}>
+                    <td>{holiday.name}</td>
+                    <td>{holiday.description}</td>
+                    <td>{holiday.date.iso}</td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+</template>
